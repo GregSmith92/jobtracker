@@ -2,17 +2,10 @@ class JobsController < ApplicationController
   # skip_before_action :authenticate_user!
   def index
     @user = current_user
-    @jobs = Job.where[user_id: @user]
+    @jobs = Job.where(user_id: @user)
   end
 
   def show
-    # @job = job.find(params[:id])
-    # @attendees = Attendee.where(job_id: @job.id)
-    # @markers =
-    #   {
-    #     lat: @job.latitude,
-    #     lng: @job.longitude
-    #   }
   end
 
   def new
