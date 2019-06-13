@@ -11,7 +11,10 @@
     <p><%= job.salary %></p>
       <%= link_to job_path(job), :method => :delete  do %>
         <i class="fas fa-trash-alt"></i>
-        <% end %>
+      <% end %>
+      <%= link_to edit_job_path(job) do %>
+        <i class="fas fa-pen"></i>
+      <% end %>
     <% end %>
   <% end %>
 

@@ -1,0 +1,12 @@
+<div class="form-questions">
+  <%= simple_form_for @job do |f| %>
+  <%= f.input :title %>
+  <%= f.input :company %>
+  <%= f.input :salary %>
+  <%= f.input :desire %>
+  <%= f.input :date_applied %>
+  <%= f.input :person_of_contact %>
+  <%= f.input :link_to_job %>
+  <%= f.button :submit, class: "btn btn-primary"  %>
+  <% end %>
+</div>

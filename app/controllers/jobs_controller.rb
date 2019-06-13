@@ -32,7 +32,7 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
     if @job.update(job_params)
-      redirect_to @job, notice: 'job successfully updated'
+      redirect_to root_path, notice: 'job successfully updated'
     else
       render :edit
     end
