@@ -19,7 +19,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     @job.user = @user
     if @job.save
-      redirect_to job_path(@job)
+      redirect_to root_path
     else
       render "new"
     end
@@ -41,12 +41,12 @@ class JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
-    redirect_to job_path(@jobs)
+    redirect_to root_path
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :company, :desire, :date_applied, :person_of_contact, :link_to_job)
+    params.require(:job).permit(:title, :company, :salary, :desire, :date_applied, :person_of_contact, :link_to_job)
   end
 end
