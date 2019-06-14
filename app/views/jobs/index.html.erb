@@ -24,19 +24,27 @@
         <div class="progress-bar-container">
           <div class="line">
             <div class="circles-container">
-              <div class="circle green"></div>
-              <div class="circle green"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
+              <% if job.progress != 'Thinking about applying' %>
+                <div class="green"></div>
+              <% else %>
+                <div class="yellow"></div>
+              <% end %>
+              <% if job.progress == 'Thinking about applying' %>
+                <div class="yellow"></div>
+              <% else job.progress != 'Thinking about applying' %>
+                <div class="green"></div>
+              <% end %>
+
+              <div class="gray"></div>
+              <div class="gray"></div>
+              <div class="gray"></div>
+              <div class="gray"></div>
+              <div class="gray"></div>
+              <div class="gray"></div>
             </div>
           </div>
         </div>
       </div>
     <% end %>
   <% end %>
-
-
 </div>

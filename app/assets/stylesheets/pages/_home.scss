@@ -46,8 +46,14 @@
     justify-content: space-between;
     position: inherit;
     top: -9px;
-
     .circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+    .yellow {
+      background: $yellow;
       width: 20px;
       height: 20px;
       border-radius: 50%;
@@ -55,6 +61,17 @@
     }
     .green {
       background: $green;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+    .gray {
+      background: $mid-gray;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid black;
     }
   }
 }
