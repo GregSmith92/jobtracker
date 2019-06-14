@@ -41,20 +41,37 @@
                 <div class="green"></div>
               <% end  %>
               <!-- fourth circle -->
-              <% if job.progress == 'Thinking about applying' || 'Applied' %>
+              <% if job.progress == 'Thinking about applying' || job.progress == 'Applied' %>
                 <div class="gray"></div>
               <% elsif job.progress == 'Sent follow-up email' %>
                 <div class="yellow"></div>
               <% else %>
                 <div class="green"></div>
               <% end  %>
-
-
-              <div class="gray"></div>
-              <div class="gray"></div>
-              <div class="gray"></div>
-              <div class="gray"></div>
-              <div class="gray"></div>
+              <!-- fifth circle -->
+              <% if job.progress == 'Thinking about applying' || job.progress == 'Applied' || job.progress == 'Sent follow-up email' %>
+                <div class="gray"></div>
+              <% elsif job.progress == 'Heard nothing? Reach out on LinkedIn' %>
+                <div class="yellow"></div>
+              <% else %>
+                <div class="green"></div>
+              <% end  %>
+              <!-- sixth circle -->
+              <% if job.progress == 'Thinking about applying' || job.progress == 'Applied' || job.progress == 'Sent follow-up email' || job.progress == 'Heard nothing? Reach out on LinkedIn' %>
+                <div class="gray"></div>
+              <% elsif job.progress == 'Got an interview' %>
+                <div class="yellow"></div>
+              <% else %>
+                <div class="green"></div>
+              <% end  %>
+              <!-- seventh circle -->
+              <% if job.progress == 'Got a job offer!' %>
+                <div class="blue"></div>
+              <% elsif job.progress == 'Followed up after interview' %>
+                <div class="yellow"></div>
+              <% else  %>
+                <div class="gray"></div>
+              <% end %>
             </div>
           </div>
         </div>
