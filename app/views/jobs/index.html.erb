@@ -1,20 +1,28 @@
-<div class="container text-center">
-  <h1>Job Tracker <i class="fas fa-binoculars"></i></h1>
+<div class="container">
+  <h1 class="text-center">Job Tracker <i class="fas fa-binoculars"></i></h1>
   <%= link_to new_job_path do %>
     <i class="fas fa-plus"></i>
   <% end %>
 
   <% if @jobs.count > 0 %>
     <% @jobs.each do |job| %>
-    <h3><%= job.title %> </h3>
-    <p><%= job.company %></p>
-    <p><%= job.salary %></p>
-      <%= link_to job_path(job), :method => :delete  do %>
-        <i class="fas fa-trash-alt"></i>
-      <% end %>
-      <%= link_to edit_job_path(job) do %>
-        <i class="fas fa-pen"></i>
-      <% end %>
+      <div class="job-card">
+        <div class="card-title">
+          <h3><%= job.company %></h3>
+          <div>
+            <%= link_to edit_job_path(job) do %>
+              <i class="fas fa-pen"></i>
+            <% end %>
+            <%= link_to job_path(job), :method => :delete  do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </div>
+        <p><%= job.title %> | <%= job.salary ? job.salary : "unknown salary" %> </p>
+      </div>
+      <div class="progress-bar-container">
+
+      </div>
     <% end %>
   <% end %>
 

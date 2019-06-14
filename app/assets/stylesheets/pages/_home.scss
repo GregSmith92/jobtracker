@@ -1,1 +1,28 @@
-// Specific CSS for your home-page
+.job-card {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  background: white;
+  padding: 0px 15px;
+  max-width: 300px;
+  .card-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    padding-top: 0.3rem;
+    h3 {
+    }
+    i {
+      font-size: 1rem;
+    }
+  }
+  p {
+    padding-bottom: 0.3rem;
+    font-size: 0.8rem
+  }
+}
+
+@media (max-width: 767px) {
+  p {
+    font-size: 0.8rem;
+  }
+}
