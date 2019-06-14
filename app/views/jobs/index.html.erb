@@ -24,18 +24,32 @@
         <div class="progress-bar-container">
           <div class="line">
             <div class="circles-container">
-              <% if job.progress != 'Thinking about applying' %>
-                <div class="green"></div>
-              <% else %>
-                <div class="yellow"></div>
-              <% end %>
+              <!-- first circle -->
+              <div class="green"></div>
+              <!-- second circle -->
               <% if job.progress == 'Thinking about applying' %>
                 <div class="yellow"></div>
-              <% else job.progress != 'Thinking about applying' %>
+              <% elsif job.progress != 'Thinking about applying' %>
                 <div class="green"></div>
               <% end %>
+              <!-- third circle -->
+              <% if job.progress == 'Thinking about applying' %>
+                <div class="gray"></div>
+              <% elsif job.progress == 'Applied' %>
+                <div class="yellow"></div>
+              <% else %>
+                <div class="green"></div>
+              <% end  %>
+              <!-- fourth circle -->
+              <% if job.progress == 'Thinking about applying' || 'Applied' %>
+                <div class="gray"></div>
+              <% elsif job.progress == 'Sent follow-up email' %>
+                <div class="yellow"></div>
+              <% else %>
+                <div class="green"></div>
+              <% end  %>
 
-              <div class="gray"></div>
+
               <div class="gray"></div>
               <div class="gray"></div>
               <div class="gray"></div>
