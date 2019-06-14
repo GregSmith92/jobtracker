@@ -6,22 +6,34 @@
 
   <% if @jobs.count > 0 %>
     <% @jobs.each do |job| %>
-      <div class="job-card">
-        <div class="card-title">
-          <h3><%= job.company %></h3>
-          <div>
-            <%= link_to edit_job_path(job) do %>
-              <i class="fas fa-pen"></i>
-            <% end %>
-            <%= link_to job_path(job), :method => :delete  do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
+      <div class="job-row">
+        <div class="job-card">
+          <div class="card-title">
+            <h3><%= job.company %></h3>
+            <div>
+              <%= link_to edit_job_path(job) do %>
+                <i class="fas fa-pen"></i>
+              <% end %>
+              <%= link_to job_path(job), :method => :delete  do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+          <p><%= job.title %> | <%= job.salary ? job.salary : "unknown salary" %> </p>
+        </div>
+        <div class="progress-bar-container">
+          <div class="line">
+            <div class="circles-container">
+              <div class="circle green"></div>
+              <div class="circle green"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
           </div>
         </div>
-        <p><%= job.title %> | <%= job.salary ? job.salary : "unknown salary" %> </p>
-      </div>
-      <div class="progress-bar-container">
-
       </div>
     <% end %>
   <% end %>
