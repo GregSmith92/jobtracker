@@ -1,3 +1,17 @@
+.job-stats-container {
+  display: flex;
+  justify-content: space-between;
+  .job-stat {
+    text-align: center;
+    margin: 10px 20px;
+  }
+  #new-job{
+    font-size: 4rem;
+    margin: 10px 20px 10px 0px;
+  }
+}
+
+
 .job-row {
   display: flex;
   margin: 1rem 0px;
@@ -37,51 +51,52 @@
 
 .line {
   // border-bottom: 1px solid black;
-  height: 1px;
-  background: black;
+  height: 4px;
+  background: $gray;
   flex-grow: 1;
   position: relative;
   .circles-container {
     display: flex;
     justify-content: space-between;
     position: inherit;
-    top: -9px;
+    top: -13px;
     .circle {
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid black;
     }
     .yellow {
       background: $yellow;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid black;
     }
     .green {
       background: $green;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid black;
     }
     .gray {
       background: $mid-gray;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid black;
     }
     .blue {
       background: $blue;
-      width: 20px;
-      height: 20px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       border: 1px solid black;
     }
   }
 }
+
 
 @media (max-width: 767px) {
   p {

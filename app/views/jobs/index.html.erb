@@ -1,8 +1,23 @@
 <div class="container">
   <h1 class="text-center">Job Tracker <i class="fas fa-binoculars"></i></h1>
-  <%= link_to new_job_path do %>
-    <i class="fas fa-plus"></i>
-  <% end %>
+  <div class="job-stats-container">
+    <%= link_to new_job_path do %>
+      <i class="fas fa-plus" id="new-job"></i>
+    <% end %>
+    <div class="job-stat">
+      <h3>Jobs Applied For</h3>
+      <h4><%= @jobs.count - @jobs.where(progress: "Applied").count %> </h4>
+    </div>
+    <div class="job-stat">
+      <h3>Interviews Requests</h3>
+      <h4><%= @jobs.where(progress: "Got an interview").count + @jobs.where(progress: "Followed up after interview").count + @jobs.where(progress: "Got a job offer!").count %> </h4>
+    </div>
+    <div class="job-stat">
+      <h3>Job Offers</h3>
+      <h4> <%= @jobs.where(progress: "Got a job offer!").count %> </h4>
+    </div>
+
+  </div>
 
   <% if @jobs.count > 0 %>
     <% @jobs.each do |job| %>
@@ -25,12 +40,12 @@
           <div class="line">
             <div class="circles-container">
               <!-- first circle -->
-              <div class="green"></div>
+              <div class="green" id="first"></div>
               <!-- second circle -->
               <% if job.progress == 'Thinking about applying' %>
-                <div class="yellow"></div>
+                <div class="yellow" id="second"></div>
               <% elsif job.progress != 'Thinking about applying' %>
-                <div class="green"></div>
+                <div class="green" id="second"></div>
               <% end %>
               <!-- third circle -->
               <% if job.progress == 'Thinking about applying' %>
