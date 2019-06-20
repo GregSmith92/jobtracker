@@ -6,7 +6,7 @@
     <% end %>
     <div class="job-stat">
       <h3>Jobs Applied For</h3>
-      <h4><%= @jobs.count - @jobs.where(progress: "Applied").count %> </h4>
+      <h4><%= @jobs.count - @jobs.where(progress: "Thinking about applying").count %> </h4>
     </div>
     <div class="job-stat">
       <h3>Interviews Requests</h3>
